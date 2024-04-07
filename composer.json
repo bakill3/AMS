@@ -1,5 +1,26 @@
 {
+    "name": "deost/ams",
+    "description": "A secure and scalable Event-Driven Architecture messaging system, leveraging PHP for backend operations and Redis for real-time event messaging. Designed to facilitate efficient and encrypted communication, this application stands out with its Docker-based deployment for enhanced portability and ease of setup. Ideal for teams and organizations looking to implement a private, real-time chat service with the added benefits of event-driven scalability and security.",
+    "type": "project",
     "require": {
-        "spomky-labs/otphp": "^11.2"
-    }
+      "predis/predis": "^3.0@alpha",
+      "phpmailer/phpmailer": "^6.9",
+      "monolog/monolog": "^3.5",
+      "vlucas/phpdotenv": "^5.4",
+      "symfony/http-foundation": "^6.4"
+    },
+    "require-dev": {},
+    "autoload": {
+      "psr-4": {
+        "Deost\\Ams\\": "src/"
+      }
+    },
+    "authors": [
+      {
+        "name": "Gabriel Brandão",
+        "email": "deostulti2@gmail.com"
+      }
+    ],
+    "minimum-stability": "alpha"
 }
+  
