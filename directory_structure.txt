@@ -1,0 +1,1267 @@
+Folder PATH listing for volume Windows
+Volume serial number is 7818-044D
+C:.
+|   .env
+|   .gitignore
+|   chat.php
+|   composer.json
+|   composer.lock
+|   directory_structure.txt
+|   docker-compose.yml
+|   Dockerfile
+|   README.md
+|   
++---old files
+|       functions.php
+|       index.php
+|       login.php
+|       logout.php
+|       register.php
+|       script.js
+|       
++---public
+|       index.php
+|       
++---secure
+|       key.bin
+|       
++---src
+|   +---Controllers
+|   |       LoginController.php
+|   |       LogoutController.php
+|   |       RegisterController.php
+|   |       
+|   +---Events
+|   |       UserLoggedInEvent.php
+|   |       UserLoggedOutEvent.php
+|   |       UserRegisteredEvent.php
+|   |       
+|   \---Models
+|           UserModel.php
+|           
+\---vendor
+    |   autoload.php
+    |   
+    +---composer
+    |       autoload_classmap.php
+    |       autoload_files.php
+    |       autoload_namespaces.php
+    |       autoload_psr4.php
+    |       autoload_real.php
+    |       autoload_static.php
+    |       ClassLoader.php
+    |       installed.json
+    |       installed.php
+    |       InstalledVersions.php
+    |       LICENSE
+    |       platform_check.php
+    |       
+    +---graham-campbell
+    |   \---result-type
+    |       |   composer.json
+    |       |   LICENSE
+    |       |   
+    |       \---src
+    |               Error.php
+    |               Result.php
+    |               Success.php
+    |               
+    +---monolog
+    |   \---monolog
+    |       |   CHANGELOG.md
+    |       |   composer.json
+    |       |   favicon.ico
+    |       |   LICENSE
+    |       |   logo.jpg
+    |       |   README.md
+    |       |   
+    |       \---src
+    |           \---Monolog
+    |               |   DateTimeImmutable.php
+    |               |   ErrorHandler.php
+    |               |   Level.php
+    |               |   Logger.php
+    |               |   LogRecord.php
+    |               |   Registry.php
+    |               |   ResettableInterface.php
+    |               |   SignalHandler.php
+    |               |   Utils.php
+    |               |   
+    |               +---Attribute
+    |               |       AsMonologProcessor.php
+    |               |       WithMonologChannel.php
+    |               |       
+    |               +---Formatter
+    |               |       ChromePHPFormatter.php
+    |               |       ElasticaFormatter.php
+    |               |       ElasticsearchFormatter.php
+    |               |       FlowdockFormatter.php
+    |               |       FluentdFormatter.php
+    |               |       FormatterInterface.php
+    |               |       GelfMessageFormatter.php
+    |               |       GoogleCloudLoggingFormatter.php
+    |               |       HtmlFormatter.php
+    |               |       JsonFormatter.php
+    |               |       LineFormatter.php
+    |               |       LogglyFormatter.php
+    |               |       LogmaticFormatter.php
+    |               |       LogstashFormatter.php
+    |               |       MongoDBFormatter.php
+    |               |       NormalizerFormatter.php
+    |               |       ScalarFormatter.php
+    |               |       SyslogFormatter.php
+    |               |       WildfireFormatter.php
+    |               |       
+    |               +---Handler
+    |               |   |   AbstractHandler.php
+    |               |   |   AbstractProcessingHandler.php
+    |               |   |   AbstractSyslogHandler.php
+    |               |   |   AmqpHandler.php
+    |               |   |   BrowserConsoleHandler.php
+    |               |   |   BufferHandler.php
+    |               |   |   ChromePHPHandler.php
+    |               |   |   CouchDBHandler.php
+    |               |   |   CubeHandler.php
+    |               |   |   DeduplicationHandler.php
+    |               |   |   DoctrineCouchDBHandler.php
+    |               |   |   DynamoDbHandler.php
+    |               |   |   ElasticaHandler.php
+    |               |   |   ElasticsearchHandler.php
+    |               |   |   ErrorLogHandler.php
+    |               |   |   FallbackGroupHandler.php
+    |               |   |   FilterHandler.php
+    |               |   |   FingersCrossedHandler.php
+    |               |   |   FirePHPHandler.php
+    |               |   |   FleepHookHandler.php
+    |               |   |   FlowdockHandler.php
+    |               |   |   FormattableHandlerInterface.php
+    |               |   |   FormattableHandlerTrait.php
+    |               |   |   GelfHandler.php
+    |               |   |   GroupHandler.php
+    |               |   |   Handler.php
+    |               |   |   HandlerInterface.php
+    |               |   |   HandlerWrapper.php
+    |               |   |   IFTTTHandler.php
+    |               |   |   InsightOpsHandler.php
+    |               |   |   LogEntriesHandler.php
+    |               |   |   LogglyHandler.php
+    |               |   |   LogmaticHandler.php
+    |               |   |   MailHandler.php
+    |               |   |   MandrillHandler.php
+    |               |   |   MissingExtensionException.php
+    |               |   |   MongoDBHandler.php
+    |               |   |   NativeMailerHandler.php
+    |               |   |   NewRelicHandler.php
+    |               |   |   NoopHandler.php
+    |               |   |   NullHandler.php
+    |               |   |   OverflowHandler.php
+    |               |   |   PHPConsoleHandler.php
+    |               |   |   ProcessableHandlerInterface.php
+    |               |   |   ProcessableHandlerTrait.php
+    |               |   |   ProcessHandler.php
+    |               |   |   PsrHandler.php
+    |               |   |   PushoverHandler.php
+    |               |   |   RedisHandler.php
+    |               |   |   RedisPubSubHandler.php
+    |               |   |   RollbarHandler.php
+    |               |   |   RotatingFileHandler.php
+    |               |   |   SamplingHandler.php
+    |               |   |   SendGridHandler.php
+    |               |   |   SlackHandler.php
+    |               |   |   SlackWebhookHandler.php
+    |               |   |   SocketHandler.php
+    |               |   |   SqsHandler.php
+    |               |   |   StreamHandler.php
+    |               |   |   SymfonyMailerHandler.php
+    |               |   |   SyslogHandler.php
+    |               |   |   SyslogUdpHandler.php
+    |               |   |   TelegramBotHandler.php
+    |               |   |   TestHandler.php
+    |               |   |   WebRequestRecognizerTrait.php
+    |               |   |   WhatFailureGroupHandler.php
+    |               |   |   ZendMonitorHandler.php
+    |               |   |   
+    |               |   +---Curl
+    |               |   |       Util.php
+    |               |   |       
+    |               |   +---FingersCrossed
+    |               |   |       ActivationStrategyInterface.php
+    |               |   |       ChannelLevelActivationStrategy.php
+    |               |   |       ErrorLevelActivationStrategy.php
+    |               |   |       
+    |               |   +---Slack
+    |               |   |       SlackRecord.php
+    |               |   |       
+    |               |   \---SyslogUdp
+    |               |           UdpSocket.php
+    |               |           
+    |               +---Processor
+    |               |       ClosureContextProcessor.php
+    |               |       GitProcessor.php
+    |               |       HostnameProcessor.php
+    |               |       IntrospectionProcessor.php
+    |               |       LoadAverageProcessor.php
+    |               |       MemoryPeakUsageProcessor.php
+    |               |       MemoryProcessor.php
+    |               |       MemoryUsageProcessor.php
+    |               |       MercurialProcessor.php
+    |               |       ProcessIdProcessor.php
+    |               |       ProcessorInterface.php
+    |               |       PsrLogMessageProcessor.php
+    |               |       TagProcessor.php
+    |               |       UidProcessor.php
+    |               |       WebProcessor.php
+    |               |       
+    |               \---Test
+    |                       TestCase.php
+    |                       
+    +---phpmailer
+    |   \---phpmailer
+    |       |   .editorconfig
+    |       |   COMMITMENT
+    |       |   composer.json
+    |       |   get_oauth_token.php
+    |       |   LICENSE
+    |       |   README.md
+    |       |   SECURITY.md
+    |       |   VERSION
+    |       |   
+    |       +---language
+    |       |       phpmailer.lang-af.php
+    |       |       phpmailer.lang-ar.php
+    |       |       phpmailer.lang-as.php
+    |       |       phpmailer.lang-az.php
+    |       |       phpmailer.lang-ba.php
+    |       |       phpmailer.lang-be.php
+    |       |       phpmailer.lang-bg.php
+    |       |       phpmailer.lang-bn.php
+    |       |       phpmailer.lang-ca.php
+    |       |       phpmailer.lang-cs.php
+    |       |       phpmailer.lang-da.php
+    |       |       phpmailer.lang-de.php
+    |       |       phpmailer.lang-el.php
+    |       |       phpmailer.lang-eo.php
+    |       |       phpmailer.lang-es.php
+    |       |       phpmailer.lang-et.php
+    |       |       phpmailer.lang-fa.php
+    |       |       phpmailer.lang-fi.php
+    |       |       phpmailer.lang-fo.php
+    |       |       phpmailer.lang-fr.php
+    |       |       phpmailer.lang-gl.php
+    |       |       phpmailer.lang-he.php
+    |       |       phpmailer.lang-hi.php
+    |       |       phpmailer.lang-hr.php
+    |       |       phpmailer.lang-hu.php
+    |       |       phpmailer.lang-hy.php
+    |       |       phpmailer.lang-id.php
+    |       |       phpmailer.lang-it.php
+    |       |       phpmailer.lang-ja.php
+    |       |       phpmailer.lang-ka.php
+    |       |       phpmailer.lang-ko.php
+    |       |       phpmailer.lang-lt.php
+    |       |       phpmailer.lang-lv.php
+    |       |       phpmailer.lang-mg.php
+    |       |       phpmailer.lang-mn.php
+    |       |       phpmailer.lang-ms.php
+    |       |       phpmailer.lang-nb.php
+    |       |       phpmailer.lang-nl.php
+    |       |       phpmailer.lang-pl.php
+    |       |       phpmailer.lang-pt.php
+    |       |       phpmailer.lang-pt_br.php
+    |       |       phpmailer.lang-ro.php
+    |       |       phpmailer.lang-ru.php
+    |       |       phpmailer.lang-si.php
+    |       |       phpmailer.lang-sk.php
+    |       |       phpmailer.lang-sl.php
+    |       |       phpmailer.lang-sr.php
+    |       |       phpmailer.lang-sr_latn.php
+    |       |       phpmailer.lang-sv.php
+    |       |       phpmailer.lang-tl.php
+    |       |       phpmailer.lang-tr.php
+    |       |       phpmailer.lang-uk.php
+    |       |       phpmailer.lang-vi.php
+    |       |       phpmailer.lang-zh.php
+    |       |       phpmailer.lang-zh_cn.php
+    |       |       
+    |       \---src
+    |               DSNConfigurator.php
+    |               Exception.php
+    |               OAuth.php
+    |               OAuthTokenProvider.php
+    |               PHPMailer.php
+    |               POP3.php
+    |               SMTP.php
+    |               
+    +---phpoption
+    |   \---phpoption
+    |       |   composer.json
+    |       |   LICENSE
+    |       |   
+    |       \---src
+    |           \---PhpOption
+    |                   LazyOption.php
+    |                   None.php
+    |                   Option.php
+    |                   Some.php
+    |                   
+    +---predis
+    |   \---predis
+    |       |   autoload.php
+    |       |   composer.json
+    |       |   LICENSE
+    |       |   README.md
+    |       |   
+    |       +---docker
+    |       |   \---unstable_cluster
+    |       |           create_cluster.sh
+    |       |           docker-compose.yml
+    |       |           Dockerfile
+    |       |           redis.conf
+    |       |           
+    |       \---src
+    |           |   Autoloader.php
+    |           |   Client.php
+    |           |   ClientConfiguration.php
+    |           |   ClientContextInterface.php
+    |           |   ClientException.php
+    |           |   ClientInterface.php
+    |           |   CommunicationException.php
+    |           |   NotSupportedException.php
+    |           |   PredisException.php
+    |           |   
+    |           +---Cluster
+    |           |   |   ClusterStrategy.php
+    |           |   |   PredisStrategy.php
+    |           |   |   RedisStrategy.php
+    |           |   |   SlotMap.php
+    |           |   |   StrategyInterface.php
+    |           |   |   
+    |           |   +---Distributor
+    |           |   |       DistributorInterface.php
+    |           |   |       EmptyRingException.php
+    |           |   |       HashRing.php
+    |           |   |       KetamaRing.php
+    |           |   |       
+    |           |   \---Hash
+    |           |           CRC16.php
+    |           |           HashGeneratorInterface.php
+    |           |           
+    |           +---Collection
+    |           |   \---Iterator
+    |           |           CursorBasedIterator.php
+    |           |           HashKey.php
+    |           |           Keyspace.php
+    |           |           ListKey.php
+    |           |           SetKey.php
+    |           |           SortedSetKey.php
+    |           |           
+    |           +---Command
+    |           |   |   Command.php
+    |           |   |   CommandInterface.php
+    |           |   |   Factory.php
+    |           |   |   FactoryInterface.php
+    |           |   |   PrefixableCommand.php
+    |           |   |   PrefixableCommandInterface.php
+    |           |   |   RawCommand.php
+    |           |   |   RawFactory.php
+    |           |   |   RedisFactory.php
+    |           |   |   ScriptCommand.php
+    |           |   |   
+    |           |   +---Argument
+    |           |   |   |   ArrayableArgument.php
+    |           |   |   |   
+    |           |   |   +---Geospatial
+    |           |   |   |       AbstractBy.php
+    |           |   |   |       ByBox.php
+    |           |   |   |       ByInterface.php
+    |           |   |   |       ByRadius.php
+    |           |   |   |       FromInterface.php
+    |           |   |   |       FromLonLat.php
+    |           |   |   |       FromMember.php
+    |           |   |   |       
+    |           |   |   +---Search
+    |           |   |   |   |   AggregateArguments.php
+    |           |   |   |   |   AlterArguments.php
+    |           |   |   |   |   CommonArguments.php
+    |           |   |   |   |   CreateArguments.php
+    |           |   |   |   |   CursorArguments.php
+    |           |   |   |   |   DropArguments.php
+    |           |   |   |   |   ExplainArguments.php
+    |           |   |   |   |   ProfileArguments.php
+    |           |   |   |   |   SearchArguments.php
+    |           |   |   |   |   SpellcheckArguments.php
+    |           |   |   |   |   SugAddArguments.php
+    |           |   |   |   |   SugGetArguments.php
+    |           |   |   |   |   SynUpdateArguments.php
+    |           |   |   |   |   
+    |           |   |   |   \---SchemaFields
+    |           |   |   |           AbstractField.php
+    |           |   |   |           FieldInterface.php
+    |           |   |   |           GeoField.php
+    |           |   |   |           NumericField.php
+    |           |   |   |           TagField.php
+    |           |   |   |           TextField.php
+    |           |   |   |           VectorField.php
+    |           |   |   |           
+    |           |   |   +---Server
+    |           |   |   |       LimitInterface.php
+    |           |   |   |       LimitOffsetCount.php
+    |           |   |   |       To.php
+    |           |   |   |       
+    |           |   |   +---Stream
+    |           |   |   |       XInfoStreamOptions.php
+    |           |   |   |       
+    |           |   |   \---TimeSeries
+    |           |   |           AddArguments.php
+    |           |   |           AlterArguments.php
+    |           |   |           CommonArguments.php
+    |           |   |           CreateArguments.php
+    |           |   |           DecrByArguments.php
+    |           |   |           GetArguments.php
+    |           |   |           IncrByArguments.php
+    |           |   |           InfoArguments.php
+    |           |   |           MGetArguments.php
+    |           |   |           MRangeArguments.php
+    |           |   |           RangeArguments.php
+    |           |   |           
+    |           |   +---Container
+    |           |   |   |   AbstractContainer.php
+    |           |   |   |   ACL.php
+    |           |   |   |   CLIENT.php
+    |           |   |   |   ContainerFactory.php
+    |           |   |   |   ContainerInterface.php
+    |           |   |   |   FUNCTIONS.php
+    |           |   |   |   TFUNCTION.php
+    |           |   |   |   XGROUP.php
+    |           |   |   |   XINFO.php
+    |           |   |   |   
+    |           |   |   +---Json
+    |           |   |   |       JSONDEBUG.php
+    |           |   |   |       
+    |           |   |   \---Search
+    |           |   |           FTCONFIG.php
+    |           |   |           FTCURSOR.php
+    |           |   |           
+    |           |   +---Processor
+    |           |   |       KeyPrefixProcessor.php
+    |           |   |       ProcessorChain.php
+    |           |   |       ProcessorInterface.php
+    |           |   |       
+    |           |   +---Redis
+    |           |   |   |   ACL.php
+    |           |   |   |   APPEND.php
+    |           |   |   |   AUTH.php
+    |           |   |   |   BGREWRITEAOF.php
+    |           |   |   |   BGSAVE.php
+    |           |   |   |   BITCOUNT.php
+    |           |   |   |   BITFIELD.php
+    |           |   |   |   BITOP.php
+    |           |   |   |   BITPOS.php
+    |           |   |   |   BLMOVE.php
+    |           |   |   |   BLMPOP.php
+    |           |   |   |   BLPOP.php
+    |           |   |   |   BRPOP.php
+    |           |   |   |   BRPOPLPUSH.php
+    |           |   |   |   BZMPOP.php
+    |           |   |   |   BZPOPMAX.php
+    |           |   |   |   BZPOPMIN.php
+    |           |   |   |   CLIENT.php
+    |           |   |   |   COMMAND.php
+    |           |   |   |   CONFIG.php
+    |           |   |   |   COPY.php
+    |           |   |   |   DBSIZE.php
+    |           |   |   |   DECR.php
+    |           |   |   |   DECRBY.php
+    |           |   |   |   DEL.php
+    |           |   |   |   DISCARD.php
+    |           |   |   |   DUMP.php
+    |           |   |   |   ECHO_.php
+    |           |   |   |   EVALSHA.php
+    |           |   |   |   EVALSHA_RO.php
+    |           |   |   |   EVAL_.php
+    |           |   |   |   EVAL_RO.php
+    |           |   |   |   EXEC.php
+    |           |   |   |   EXISTS.php
+    |           |   |   |   EXPIRE.php
+    |           |   |   |   EXPIREAT.php
+    |           |   |   |   EXPIRETIME.php
+    |           |   |   |   FAILOVER.php
+    |           |   |   |   FCALL.php
+    |           |   |   |   FCALL_RO.php
+    |           |   |   |   FLUSHALL.php
+    |           |   |   |   FLUSHDB.php
+    |           |   |   |   FUNCTIONS.php
+    |           |   |   |   GEOADD.php
+    |           |   |   |   GEODIST.php
+    |           |   |   |   GEOHASH.php
+    |           |   |   |   GEOPOS.php
+    |           |   |   |   GEORADIUS.php
+    |           |   |   |   GEORADIUSBYMEMBER.php
+    |           |   |   |   GEOSEARCH.php
+    |           |   |   |   GEOSEARCHSTORE.php
+    |           |   |   |   GET.php
+    |           |   |   |   GETBIT.php
+    |           |   |   |   GETDEL.php
+    |           |   |   |   GETEX.php
+    |           |   |   |   GETRANGE.php
+    |           |   |   |   GETSET.php
+    |           |   |   |   HDEL.php
+    |           |   |   |   HEXISTS.php
+    |           |   |   |   HGET.php
+    |           |   |   |   HGETALL.php
+    |           |   |   |   HINCRBY.php
+    |           |   |   |   HINCRBYFLOAT.php
+    |           |   |   |   HKEYS.php
+    |           |   |   |   HLEN.php
+    |           |   |   |   HMGET.php
+    |           |   |   |   HMSET.php
+    |           |   |   |   HRANDFIELD.php
+    |           |   |   |   HSCAN.php
+    |           |   |   |   HSET.php
+    |           |   |   |   HSETNX.php
+    |           |   |   |   HSTRLEN.php
+    |           |   |   |   HVALS.php
+    |           |   |   |   INCR.php
+    |           |   |   |   INCRBY.php
+    |           |   |   |   INCRBYFLOAT.php
+    |           |   |   |   INFO.php
+    |           |   |   |   KEYS.php
+    |           |   |   |   LASTSAVE.php
+    |           |   |   |   LCS.php
+    |           |   |   |   LINDEX.php
+    |           |   |   |   LINSERT.php
+    |           |   |   |   LLEN.php
+    |           |   |   |   LMOVE.php
+    |           |   |   |   LMPOP.php
+    |           |   |   |   LPOP.php
+    |           |   |   |   LPUSH.php
+    |           |   |   |   LPUSHX.php
+    |           |   |   |   LRANGE.php
+    |           |   |   |   LREM.php
+    |           |   |   |   LSET.php
+    |           |   |   |   LTRIM.php
+    |           |   |   |   MGET.php
+    |           |   |   |   MIGRATE.php
+    |           |   |   |   MONITOR.php
+    |           |   |   |   MOVE.php
+    |           |   |   |   MSET.php
+    |           |   |   |   MSETNX.php
+    |           |   |   |   MULTI.php
+    |           |   |   |   OBJECT_.php
+    |           |   |   |   PERSIST.php
+    |           |   |   |   PEXPIRE.php
+    |           |   |   |   PEXPIREAT.php
+    |           |   |   |   PEXPIRETIME.php
+    |           |   |   |   PFADD.php
+    |           |   |   |   PFCOUNT.php
+    |           |   |   |   PFMERGE.php
+    |           |   |   |   PING.php
+    |           |   |   |   PSETEX.php
+    |           |   |   |   PSUBSCRIBE.php
+    |           |   |   |   PTTL.php
+    |           |   |   |   PUBLISH.php
+    |           |   |   |   PUBSUB.php
+    |           |   |   |   PUNSUBSCRIBE.php
+    |           |   |   |   QUIT.php
+    |           |   |   |   RANDOMKEY.php
+    |           |   |   |   RENAME.php
+    |           |   |   |   RENAMENX.php
+    |           |   |   |   RESTORE.php
+    |           |   |   |   RPOP.php
+    |           |   |   |   RPOPLPUSH.php
+    |           |   |   |   RPUSH.php
+    |           |   |   |   RPUSHX.php
+    |           |   |   |   SADD.php
+    |           |   |   |   SAVE.php
+    |           |   |   |   SCAN.php
+    |           |   |   |   SCARD.php
+    |           |   |   |   SCRIPT.php
+    |           |   |   |   SDIFF.php
+    |           |   |   |   SDIFFSTORE.php
+    |           |   |   |   SELECT.php
+    |           |   |   |   SENTINEL.php
+    |           |   |   |   SET.php
+    |           |   |   |   SETBIT.php
+    |           |   |   |   SETEX.php
+    |           |   |   |   SETNX.php
+    |           |   |   |   SETRANGE.php
+    |           |   |   |   SHUTDOWN.php
+    |           |   |   |   SINTER.php
+    |           |   |   |   SINTERCARD.php
+    |           |   |   |   SINTERSTORE.php
+    |           |   |   |   SISMEMBER.php
+    |           |   |   |   SLAVEOF.php
+    |           |   |   |   SLOWLOG.php
+    |           |   |   |   SMEMBERS.php
+    |           |   |   |   SMISMEMBER.php
+    |           |   |   |   SMOVE.php
+    |           |   |   |   SORT.php
+    |           |   |   |   SORT_RO.php
+    |           |   |   |   SPOP.php
+    |           |   |   |   SPUBLISH.php
+    |           |   |   |   SRANDMEMBER.php
+    |           |   |   |   SREM.php
+    |           |   |   |   SSCAN.php
+    |           |   |   |   SSUBSCRIBE.php
+    |           |   |   |   STRLEN.php
+    |           |   |   |   SUBSCRIBE.php
+    |           |   |   |   SUBSTR.php
+    |           |   |   |   SUNION.php
+    |           |   |   |   SUNIONSTORE.php
+    |           |   |   |   SUNSUBSCRIBE.php
+    |           |   |   |   TFCALL.php
+    |           |   |   |   TFCALLASYNC.php
+    |           |   |   |   TFUNCTION.php
+    |           |   |   |   TIME.php
+    |           |   |   |   TOUCH.php
+    |           |   |   |   TTL.php
+    |           |   |   |   TYPE.php
+    |           |   |   |   UNSUBSCRIBE.php
+    |           |   |   |   UNWATCH.php
+    |           |   |   |   WATCH.php
+    |           |   |   |   XADD.php
+    |           |   |   |   XAUTOCLAIM.php
+    |           |   |   |   XDEL.php
+    |           |   |   |   XGROUP.php
+    |           |   |   |   XINFO.php
+    |           |   |   |   XLEN.php
+    |           |   |   |   XRANGE.php
+    |           |   |   |   XREADGROUP.php
+    |           |   |   |   XREVRANGE.php
+    |           |   |   |   XTRIM.php
+    |           |   |   |   ZADD.php
+    |           |   |   |   ZCARD.php
+    |           |   |   |   ZCOUNT.php
+    |           |   |   |   ZDIFF.php
+    |           |   |   |   ZDIFFSTORE.php
+    |           |   |   |   ZINCRBY.php
+    |           |   |   |   ZINTER.php
+    |           |   |   |   ZINTERCARD.php
+    |           |   |   |   ZINTERSTORE.php
+    |           |   |   |   ZLEXCOUNT.php
+    |           |   |   |   ZMPOP.php
+    |           |   |   |   ZMSCORE.php
+    |           |   |   |   ZPOPMAX.php
+    |           |   |   |   ZPOPMIN.php
+    |           |   |   |   ZRANDMEMBER.php
+    |           |   |   |   ZRANGE.php
+    |           |   |   |   ZRANGEBYLEX.php
+    |           |   |   |   ZRANGEBYSCORE.php
+    |           |   |   |   ZRANGESTORE.php
+    |           |   |   |   ZRANK.php
+    |           |   |   |   ZREM.php
+    |           |   |   |   ZREMRANGEBYLEX.php
+    |           |   |   |   ZREMRANGEBYRANK.php
+    |           |   |   |   ZREMRANGEBYSCORE.php
+    |           |   |   |   ZREVRANGE.php
+    |           |   |   |   ZREVRANGEBYLEX.php
+    |           |   |   |   ZREVRANGEBYSCORE.php
+    |           |   |   |   ZREVRANK.php
+    |           |   |   |   ZSCAN.php
+    |           |   |   |   ZSCORE.php
+    |           |   |   |   ZUNION.php
+    |           |   |   |   ZUNIONSTORE.php
+    |           |   |   |   
+    |           |   |   +---AbstractCommand
+    |           |   |   |       BZPOPBase.php
+    |           |   |   |       
+    |           |   |   +---BloomFilter
+    |           |   |   |       BFADD.php
+    |           |   |   |       BFEXISTS.php
+    |           |   |   |       BFINFO.php
+    |           |   |   |       BFINSERT.php
+    |           |   |   |       BFLOADCHUNK.php
+    |           |   |   |       BFMADD.php
+    |           |   |   |       BFMEXISTS.php
+    |           |   |   |       BFRESERVE.php
+    |           |   |   |       BFSCANDUMP.php
+    |           |   |   |       
+    |           |   |   +---CountMinSketch
+    |           |   |   |       CMSINCRBY.php
+    |           |   |   |       CMSINFO.php
+    |           |   |   |       CMSINITBYDIM.php
+    |           |   |   |       CMSINITBYPROB.php
+    |           |   |   |       CMSMERGE.php
+    |           |   |   |       CMSQUERY.php
+    |           |   |   |       
+    |           |   |   +---CuckooFilter
+    |           |   |   |       CFADD.php
+    |           |   |   |       CFADDNX.php
+    |           |   |   |       CFCOUNT.php
+    |           |   |   |       CFDEL.php
+    |           |   |   |       CFEXISTS.php
+    |           |   |   |       CFINFO.php
+    |           |   |   |       CFINSERT.php
+    |           |   |   |       CFINSERTNX.php
+    |           |   |   |       CFLOADCHUNK.php
+    |           |   |   |       CFMEXISTS.php
+    |           |   |   |       CFRESERVE.php
+    |           |   |   |       CFSCANDUMP.php
+    |           |   |   |       
+    |           |   |   +---Json
+    |           |   |   |       JSONARRAPPEND.php
+    |           |   |   |       JSONARRINDEX.php
+    |           |   |   |       JSONARRINSERT.php
+    |           |   |   |       JSONARRLEN.php
+    |           |   |   |       JSONARRPOP.php
+    |           |   |   |       JSONARRTRIM.php
+    |           |   |   |       JSONCLEAR.php
+    |           |   |   |       JSONDEBUG.php
+    |           |   |   |       JSONDEL.php
+    |           |   |   |       JSONFORGET.php
+    |           |   |   |       JSONGET.php
+    |           |   |   |       JSONMERGE.php
+    |           |   |   |       JSONMGET.php
+    |           |   |   |       JSONMSET.php
+    |           |   |   |       JSONNUMINCRBY.php
+    |           |   |   |       JSONOBJKEYS.php
+    |           |   |   |       JSONOBJLEN.php
+    |           |   |   |       JSONRESP.php
+    |           |   |   |       JSONSET.php
+    |           |   |   |       JSONSTRAPPEND.php
+    |           |   |   |       JSONSTRLEN.php
+    |           |   |   |       JSONTOGGLE.php
+    |           |   |   |       JSONTYPE.php
+    |           |   |   |       
+    |           |   |   +---Search
+    |           |   |   |       FTAGGREGATE.php
+    |           |   |   |       FTALIASADD.php
+    |           |   |   |       FTALIASDEL.php
+    |           |   |   |       FTALIASUPDATE.php
+    |           |   |   |       FTALTER.php
+    |           |   |   |       FTCONFIG.php
+    |           |   |   |       FTCREATE.php
+    |           |   |   |       FTCURSOR.php
+    |           |   |   |       FTDICTADD.php
+    |           |   |   |       FTDICTDEL.php
+    |           |   |   |       FTDICTDUMP.php
+    |           |   |   |       FTDROPINDEX.php
+    |           |   |   |       FTEXPLAIN.php
+    |           |   |   |       FTINFO.php
+    |           |   |   |       FTPROFILE.php
+    |           |   |   |       FTSEARCH.php
+    |           |   |   |       FTSPELLCHECK.php
+    |           |   |   |       FTSUGADD.php
+    |           |   |   |       FTSUGDEL.php
+    |           |   |   |       FTSUGGET.php
+    |           |   |   |       FTSUGLEN.php
+    |           |   |   |       FTSYNDUMP.php
+    |           |   |   |       FTSYNUPDATE.php
+    |           |   |   |       FTTAGVALS.php
+    |           |   |   |       
+    |           |   |   +---TDigest
+    |           |   |   |       TDIGESTADD.php
+    |           |   |   |       TDIGESTBYRANK.php
+    |           |   |   |       TDIGESTBYREVRANK.php
+    |           |   |   |       TDIGESTCDF.php
+    |           |   |   |       TDIGESTCREATE.php
+    |           |   |   |       TDIGESTINFO.php
+    |           |   |   |       TDIGESTMAX.php
+    |           |   |   |       TDIGESTMERGE.php
+    |           |   |   |       TDIGESTMIN.php
+    |           |   |   |       TDIGESTQUANTILE.php
+    |           |   |   |       TDIGESTRANK.php
+    |           |   |   |       TDIGESTRESET.php
+    |           |   |   |       TDIGESTREVRANK.php
+    |           |   |   |       TDIGESTTRIMMED_MEAN.php
+    |           |   |   |       
+    |           |   |   +---TimeSeries
+    |           |   |   |       TSADD.php
+    |           |   |   |       TSALTER.php
+    |           |   |   |       TSCREATE.php
+    |           |   |   |       TSCREATERULE.php
+    |           |   |   |       TSDECRBY.php
+    |           |   |   |       TSDEL.php
+    |           |   |   |       TSDELETERULE.php
+    |           |   |   |       TSGET.php
+    |           |   |   |       TSINCRBY.php
+    |           |   |   |       TSINFO.php
+    |           |   |   |       TSMADD.php
+    |           |   |   |       TSMGET.php
+    |           |   |   |       TSMRANGE.php
+    |           |   |   |       TSMREVRANGE.php
+    |           |   |   |       TSQUERYINDEX.php
+    |           |   |   |       TSRANGE.php
+    |           |   |   |       TSREVRANGE.php
+    |           |   |   |       
+    |           |   |   \---TopK
+    |           |   |           TOPKADD.php
+    |           |   |           TOPKINCRBY.php
+    |           |   |           TOPKINFO.php
+    |           |   |           TOPKLIST.php
+    |           |   |           TOPKQUERY.php
+    |           |   |           TOPKRESERVE.php
+    |           |   |           
+    |           |   \---Traits
+    |           |       |   Aggregate.php
+    |           |       |   BitByte.php
+    |           |       |   Count.php
+    |           |       |   DB.php
+    |           |       |   Keys.php
+    |           |       |   LeftRight.php
+    |           |       |   MinMaxModifier.php
+    |           |       |   Replace.php
+    |           |       |   Rev.php
+    |           |       |   Sorting.php
+    |           |       |   Storedist.php
+    |           |       |   Timeout.php
+    |           |       |   Weights.php
+    |           |       |   
+    |           |       +---BloomFilters
+    |           |       |       BucketSize.php
+    |           |       |       Capacity.php
+    |           |       |       Error.php
+    |           |       |       Expansion.php
+    |           |       |       Items.php
+    |           |       |       MaxIterations.php
+    |           |       |       NoCreate.php
+    |           |       |       
+    |           |       +---By
+    |           |       |       ByArgument.php
+    |           |       |       ByLexByScore.php
+    |           |       |       GeoBy.php
+    |           |       |       
+    |           |       +---Expire
+    |           |       |       ExpireOptions.php
+    |           |       |       
+    |           |       +---From
+    |           |       |       GeoFrom.php
+    |           |       |       
+    |           |       +---Get
+    |           |       |       Get.php
+    |           |       |       
+    |           |       +---Json
+    |           |       |       Indent.php
+    |           |       |       Newline.php
+    |           |       |       NxXxArgument.php
+    |           |       |       Space.php
+    |           |       |       
+    |           |       +---Limit
+    |           |       |       Limit.php
+    |           |       |       LimitObject.php
+    |           |       |       
+    |           |       +---To
+    |           |       |       ServerTo.php
+    |           |       |       
+    |           |       \---With
+    |           |               WithCoord.php
+    |           |               WithDist.php
+    |           |               WithHash.php
+    |           |               WithScores.php
+    |           |               WithValues.php
+    |           |               
+    |           +---Configuration
+    |           |   |   OptionInterface.php
+    |           |   |   Options.php
+    |           |   |   OptionsInterface.php
+    |           |   |   
+    |           |   \---Option
+    |           |           Aggregate.php
+    |           |           Cluster.php
+    |           |           Commands.php
+    |           |           Connections.php
+    |           |           CRC16.php
+    |           |           Exceptions.php
+    |           |           Prefix.php
+    |           |           Replication.php
+    |           |           
+    |           +---Connection
+    |           |   |   AbstractConnection.php
+    |           |   |   AggregateConnectionInterface.php
+    |           |   |   CompositeConnectionInterface.php
+    |           |   |   CompositeStreamConnection.php
+    |           |   |   ConnectionException.php
+    |           |   |   ConnectionInterface.php
+    |           |   |   Factory.php
+    |           |   |   FactoryInterface.php
+    |           |   |   NodeConnectionInterface.php
+    |           |   |   Parameters.php
+    |           |   |   ParametersInterface.php
+    |           |   |   RelayConnection.php
+    |           |   |   RelayFactory.php
+    |           |   |   RelayMethods.php
+    |           |   |   StreamConnection.php
+    |           |   |   
+    |           |   +---Cluster
+    |           |   |       ClusterInterface.php
+    |           |   |       PredisCluster.php
+    |           |   |       RedisCluster.php
+    |           |   |       
+    |           |   \---Replication
+    |           |           MasterSlaveReplication.php
+    |           |           ReplicationInterface.php
+    |           |           SentinelReplication.php
+    |           |           
+    |           +---Consumer
+    |           |   |   AbstractConsumer.php
+    |           |   |   AbstractDispatcherLoop.php
+    |           |   |   ConsumerInterface.php
+    |           |   |   DispatcherLoopInterface.php
+    |           |   |   
+    |           |   +---PubSub
+    |           |   |       Consumer.php
+    |           |   |       DispatcherLoop.php
+    |           |   |       RelayConsumer.php
+    |           |   |       SubscriptionContext.php
+    |           |   |       
+    |           |   \---Push
+    |           |           Consumer.php
+    |           |           DispatcherLoop.php
+    |           |           PushNotificationException.php
+    |           |           PushResponse.php
+    |           |           PushResponseInterface.php
+    |           |           
+    |           +---Monitor
+    |           |       Consumer.php
+    |           |       
+    |           +---Pipeline
+    |           |       Atomic.php
+    |           |       ConnectionErrorProof.php
+    |           |       FireAndForget.php
+    |           |       Pipeline.php
+    |           |       RelayAtomic.php
+    |           |       RelayPipeline.php
+    |           |       
+    |           +---Protocol
+    |           |   |   ProtocolException.php
+    |           |   |   ProtocolProcessorInterface.php
+    |           |   |   RequestSerializerInterface.php
+    |           |   |   ResponseReaderInterface.php
+    |           |   |   
+    |           |   +---Parser
+    |           |   |   |   ParserStrategyResolver.php
+    |           |   |   |   ParserStrategyResolverInterface.php
+    |           |   |   |   UnexpectedTypeException.php
+    |           |   |   |   
+    |           |   |   \---Strategy
+    |           |   |           ParserStrategyInterface.php
+    |           |   |           Resp2Strategy.php
+    |           |   |           Resp3Strategy.php
+    |           |   |           
+    |           |   \---Text
+    |           |       |   CompositeProtocolProcessor.php
+    |           |       |   ProtocolProcessor.php
+    |           |       |   RequestSerializer.php
+    |           |       |   ResponseReader.php
+    |           |       |   
+    |           |       \---Handler
+    |           |               BulkResponse.php
+    |           |               ErrorResponse.php
+    |           |               IntegerResponse.php
+    |           |               MultiBulkResponse.php
+    |           |               ResponseHandlerInterface.php
+    |           |               StatusResponse.php
+    |           |               StreamableMultiBulkResponse.php
+    |           |               
+    |           +---Replication
+    |           |       MissingMasterException.php
+    |           |       ReplicationStrategy.php
+    |           |       RoleException.php
+    |           |       
+    |           +---Response
+    |           |   |   Error.php
+    |           |   |   ErrorInterface.php
+    |           |   |   ResponseInterface.php
+    |           |   |   ServerException.php
+    |           |   |   Status.php
+    |           |   |   
+    |           |   \---Iterator
+    |           |           MultiBulk.php
+    |           |           MultiBulkIterator.php
+    |           |           MultiBulkTuple.php
+    |           |           
+    |           +---Session
+    |           |       Handler.php
+    |           |       
+    |           \---Transaction
+    |                   AbortedMultiExecException.php
+    |                   MultiExec.php
+    |                   MultiExecState.php
+    |                   
+    +---psr
+    |   \---log
+    |       |   composer.json
+    |       |   LICENSE
+    |       |   README.md
+    |       |   
+    |       \---src
+    |               AbstractLogger.php
+    |               InvalidArgumentException.php
+    |               LoggerAwareInterface.php
+    |               LoggerAwareTrait.php
+    |               LoggerInterface.php
+    |               LoggerTrait.php
+    |               LogLevel.php
+    |               NullLogger.php
+    |               
+    +---symfony
+    |   +---deprecation-contracts
+    |   |       CHANGELOG.md
+    |   |       composer.json
+    |   |       function.php
+    |   |       LICENSE
+    |   |       README.md
+    |   |       
+    |   +---http-foundation
+    |   |   |   AcceptHeader.php
+    |   |   |   AcceptHeaderItem.php
+    |   |   |   BinaryFileResponse.php
+    |   |   |   ChainRequestMatcher.php
+    |   |   |   CHANGELOG.md
+    |   |   |   composer.json
+    |   |   |   Cookie.php
+    |   |   |   ExpressionRequestMatcher.php
+    |   |   |   FileBag.php
+    |   |   |   HeaderBag.php
+    |   |   |   HeaderUtils.php
+    |   |   |   InputBag.php
+    |   |   |   IpUtils.php
+    |   |   |   JsonResponse.php
+    |   |   |   LICENSE
+    |   |   |   ParameterBag.php
+    |   |   |   README.md
+    |   |   |   RedirectResponse.php
+    |   |   |   Request.php
+    |   |   |   RequestMatcher.php
+    |   |   |   RequestMatcherInterface.php
+    |   |   |   RequestStack.php
+    |   |   |   Response.php
+    |   |   |   ResponseHeaderBag.php
+    |   |   |   ServerBag.php
+    |   |   |   StreamedJsonResponse.php
+    |   |   |   StreamedResponse.php
+    |   |   |   UriSigner.php
+    |   |   |   UrlHelper.php
+    |   |   |   
+    |   |   +---Exception
+    |   |   |       BadRequestException.php
+    |   |   |       ConflictingHeadersException.php
+    |   |   |       JsonException.php
+    |   |   |       RequestExceptionInterface.php
+    |   |   |       SessionNotFoundException.php
+    |   |   |       SuspiciousOperationException.php
+    |   |   |       UnexpectedValueException.php
+    |   |   |       
+    |   |   +---File
+    |   |   |   |   File.php
+    |   |   |   |   Stream.php
+    |   |   |   |   UploadedFile.php
+    |   |   |   |   
+    |   |   |   \---Exception
+    |   |   |           AccessDeniedException.php
+    |   |   |           CannotWriteFileException.php
+    |   |   |           ExtensionFileException.php
+    |   |   |           FileException.php
+    |   |   |           FileNotFoundException.php
+    |   |   |           FormSizeFileException.php
+    |   |   |           IniSizeFileException.php
+    |   |   |           NoFileException.php
+    |   |   |           NoTmpDirFileException.php
+    |   |   |           PartialFileException.php
+    |   |   |           UnexpectedTypeException.php
+    |   |   |           UploadException.php
+    |   |   |           
+    |   |   +---RateLimiter
+    |   |   |       AbstractRequestRateLimiter.php
+    |   |   |       PeekableRequestRateLimiterInterface.php
+    |   |   |       RequestRateLimiterInterface.php
+    |   |   |       
+    |   |   +---RequestMatcher
+    |   |   |       AttributesRequestMatcher.php
+    |   |   |       ExpressionRequestMatcher.php
+    |   |   |       HostRequestMatcher.php
+    |   |   |       IpsRequestMatcher.php
+    |   |   |       IsJsonRequestMatcher.php
+    |   |   |       MethodRequestMatcher.php
+    |   |   |       PathRequestMatcher.php
+    |   |   |       PortRequestMatcher.php
+    |   |   |       SchemeRequestMatcher.php
+    |   |   |       
+    |   |   +---Session
+    |   |   |   |   FlashBagAwareSessionInterface.php
+    |   |   |   |   Session.php
+    |   |   |   |   SessionBagInterface.php
+    |   |   |   |   SessionBagProxy.php
+    |   |   |   |   SessionFactory.php
+    |   |   |   |   SessionFactoryInterface.php
+    |   |   |   |   SessionInterface.php
+    |   |   |   |   SessionUtils.php
+    |   |   |   |   
+    |   |   |   +---Attribute
+    |   |   |   |       AttributeBag.php
+    |   |   |   |       AttributeBagInterface.php
+    |   |   |   |       
+    |   |   |   +---Flash
+    |   |   |   |       AutoExpireFlashBag.php
+    |   |   |   |       FlashBag.php
+    |   |   |   |       FlashBagInterface.php
+    |   |   |   |       
+    |   |   |   \---Storage
+    |   |   |       |   MetadataBag.php
+    |   |   |       |   MockArraySessionStorage.php
+    |   |   |       |   MockFileSessionStorage.php
+    |   |   |       |   MockFileSessionStorageFactory.php
+    |   |   |       |   NativeSessionStorage.php
+    |   |   |       |   NativeSessionStorageFactory.php
+    |   |   |       |   PhpBridgeSessionStorage.php
+    |   |   |       |   PhpBridgeSessionStorageFactory.php
+    |   |   |       |   SessionStorageFactoryInterface.php
+    |   |   |       |   SessionStorageInterface.php
+    |   |   |       |   
+    |   |   |       +---Handler
+    |   |   |       |       AbstractSessionHandler.php
+    |   |   |       |       IdentityMarshaller.php
+    |   |   |       |       MarshallingSessionHandler.php
+    |   |   |       |       MemcachedSessionHandler.php
+    |   |   |       |       MigratingSessionHandler.php
+    |   |   |       |       MongoDbSessionHandler.php
+    |   |   |       |       NativeFileSessionHandler.php
+    |   |   |       |       NullSessionHandler.php
+    |   |   |       |       PdoSessionHandler.php
+    |   |   |       |       RedisSessionHandler.php
+    |   |   |       |       SessionHandlerFactory.php
+    |   |   |       |       StrictSessionHandler.php
+    |   |   |       |       
+    |   |   |       \---Proxy
+    |   |   |               AbstractProxy.php
+    |   |   |               SessionHandlerProxy.php
+    |   |   |               
+    |   |   \---Test
+    |   |       \---Constraint
+    |   |               RequestAttributeValueSame.php
+    |   |               ResponseCookieValueSame.php
+    |   |               ResponseFormatSame.php
+    |   |               ResponseHasCookie.php
+    |   |               ResponseHasHeader.php
+    |   |               ResponseHeaderLocationSame.php
+    |   |               ResponseHeaderSame.php
+    |   |               ResponseIsRedirected.php
+    |   |               ResponseIsSuccessful.php
+    |   |               ResponseIsUnprocessable.php
+    |   |               ResponseStatusCodeSame.php
+    |   |               
+    |   +---polyfill-ctype
+    |   |       bootstrap.php
+    |   |       bootstrap80.php
+    |   |       composer.json
+    |   |       Ctype.php
+    |   |       LICENSE
+    |   |       README.md
+    |   |       
+    |   +---polyfill-mbstring
+    |   |   |   bootstrap.php
+    |   |   |   bootstrap80.php
+    |   |   |   composer.json
+    |   |   |   LICENSE
+    |   |   |   Mbstring.php
+    |   |   |   README.md
+    |   |   |   
+    |   |   \---Resources
+    |   |       \---unidata
+    |   |               caseFolding.php
+    |   |               lowerCase.php
+    |   |               titleCaseRegexp.php
+    |   |               upperCase.php
+    |   |               
+    |   +---polyfill-php80
+    |   |   |   bootstrap.php
+    |   |   |   composer.json
+    |   |   |   LICENSE
+    |   |   |   Php80.php
+    |   |   |   PhpToken.php
+    |   |   |   README.md
+    |   |   |   
+    |   |   \---Resources
+    |   |       \---stubs
+    |   |               Attribute.php
+    |   |               PhpToken.php
+    |   |               Stringable.php
+    |   |               UnhandledMatchError.php
+    |   |               ValueError.php
+    |   |               
+    |   \---polyfill-php83
+    |       |   bootstrap.php
+    |       |   bootstrap81.php
+    |       |   composer.json
+    |       |   LICENSE
+    |       |   Php83.php
+    |       |   README.md
+    |       |   
+    |       \---Resources
+    |           \---stubs
+    |                   DateError.php
+    |                   DateException.php
+    |                   DateInvalidOperationException.php
+    |                   DateInvalidTimeZoneException.php
+    |                   DateMalformedIntervalStringException.php
+    |                   DateMalformedPeriodStringException.php
+    |                   DateMalformedStringException.php
+    |                   DateObjectError.php
+    |                   DateRangeError.php
+    |                   Override.php
+    |                   SQLite3Exception.php
+    |                   
+    \---vlucas
+        \---phpdotenv
+            |   composer.json
+            |   LICENSE
+            |   
+            \---src
+                |   Dotenv.php
+                |   Validator.php
+                |   
+                +---Exception
+                |       ExceptionInterface.php
+                |       InvalidEncodingException.php
+                |       InvalidFileException.php
+                |       InvalidPathException.php
+                |       ValidationException.php
+                |       
+                +---Loader
+                |       Loader.php
+                |       LoaderInterface.php
+                |       Resolver.php
+                |       
+                +---Parser
+                |       Entry.php
+                |       EntryParser.php
+                |       Lexer.php
+                |       Lines.php
+                |       Parser.php
+                |       ParserInterface.php
+                |       Value.php
+                |       
+                +---Repository
+                |   |   AdapterRepository.php
+                |   |   RepositoryBuilder.php
+                |   |   RepositoryInterface.php
+                |   |   
+                |   \---Adapter
+                |           AdapterInterface.php
+                |           ApacheAdapter.php
+                |           ArrayAdapter.php
+                |           EnvConstAdapter.php
+                |           GuardedWriter.php
+                |           ImmutableWriter.php
+                |           MultiReader.php
+                |           MultiWriter.php
+                |           PutenvAdapter.php
+                |           ReaderInterface.php
+                |           ReplacingWriter.php
+                |           ServerConstAdapter.php
+                |           WriterInterface.php
+                |           
+                +---Store
+                |   |   FileStore.php
+                |   |   StoreBuilder.php
+                |   |   StoreInterface.php
+                |   |   StringStore.php
+                |   |   
+                |   \---File
+                |           Paths.php
+                |           Reader.php
+                |           
+                \---Util
+                        Regex.php
+                        Str.php
+                        
