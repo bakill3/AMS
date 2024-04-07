@@ -31,17 +31,6 @@ AMS represents a groundbreaking shift in secure communications, taking advantage
 - **Event-Driven Real-Time Messaging**: Implementing Redis for efficient and responsive message delivery.
 - **Secure User Authentication**: Ensuring safety with modern password hashing and session management techniques.
 
-## Security Considerations
-
-Security is a cornerstone of the Advanced Messaging System. Here are some practices we follow and recommend:
-
-- **Encryption**: We leverage AES-256-CBC encryption, utilizing true randomness from atmospheric noise for initialization vectors to ensure message confidentiality.
-- **Data Storage**: Sensitive information is securely stored, employing best practices like encrypted databases and environmental variables for sensitive configurations.
-- **Regular Updates**: Keep your AMS instance and its dependencies up to date to mitigate vulnerabilities from outdated software.
-
-We encourage administrators to follow these practices to enhance their AMS deployment security further.
-
-
 ## Getting Started
 
 To begin using AMS, you'll need Docker, Docker Compose, and Git installed on your system.
@@ -75,10 +64,6 @@ Future enhancements include:
 ## Contributing
 
 Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-- **Adhere to Coding Standards**: Follow the [PSR-12](https://www.php-fig.org/psr/psr-12/) coding standard for PHP.
-- **Write Tests**: Include unit tests for new features or bug fixes.
-- **Discuss Big Changes**: For significant changes, please open an issue to discuss the proposal before moving forward with implementation.
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
