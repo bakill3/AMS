@@ -64,9 +64,26 @@ switch ($requestPath) {
         $logoutController->logout();
         break;
     case '/register':
-        // Placeholder for registration page
-        echo "Register Page";
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $username = $_POST['username'] ?? '';
+            $email = $_POST['email'] ?? '';
+            $password = $_POST['password'] ?? '';
+            $registerController->register($username, $email, $password);
+        } else {
+            require __DIR__ . '/register.php';
+        }
         break;
+    case '/chat':
+        // Ensure the user is authenticated before accessing the chat
+        if (!isset($_SESSION['user_id'])) {
+            // Redirect to login if not authenticated
+            header("Location: /login");
+            exit;
+        }
+        // Render the chat page
+        require __DIR__ . '/public/chat.php';
+        break;
+        
     default:
         http_response_code(404);
         echo "Page not found";

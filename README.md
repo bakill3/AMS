@@ -96,6 +96,29 @@ Gabriel Brandão – [@bakill717](https://twitter.com/bakill717) – deostulti2@
 
 Project Link: [https://github.com/bakill3/AMS](https://github.com/bakill3/AMS)
 
+## Recent Updates and Troubleshooting
+
+### Enhanced Security and Functionality
+
+- **Atmospheric Noise Encryption**: Improved the implementation of atmospheric noise-based encryption to enhance message security further.
+- **Docker Integration**: Streamlined Docker setup for easier deployment and initialization of the AMS environment.
+
+### Troubleshooting Login Issues
+
+- Addressed an issue where login attempts consistently failed due to form data not being correctly received by the server.
+- Introduced debugging steps and improved error handling in the login process to provide clearer feedback and easier issue resolution.
+
+### Getting Started Enhancements
+
+- Added detailed instructions for setting up the AMS environment using Docker, including building containers and configuring the environment.
+- Clarified the steps for database initialization and provided guidance on secure configuration practices.
+
+### Future Directions
+
+- Plans to introduce group chat capabilities and secure file transfer options to enhance AMS's functionality.
+- Looking into implementing advanced security features like two-factor authentication to further secure user accounts.
+
+
 ## Acknowledgements
 
 - [Random.org](https://www.random.org/)
