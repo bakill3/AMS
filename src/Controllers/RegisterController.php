@@ -19,7 +19,7 @@ class RegisterController {
         if ($this->userModel->createUser($username, $password)) {
             $event = new UserRegisteredEvent($username);
             $this->redis->publish('user.registered', serialize($event));
-            header("Location: /public/login.php");
+            header("Location: /login.php");
             exit;
         } else {
             echo "Registration failed. The username might already exist.";

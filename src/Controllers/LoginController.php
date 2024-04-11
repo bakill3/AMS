@@ -17,12 +17,14 @@ class LoginController {
 
     public function login(string $username, string $password): void {
         if ($this->userModel->validateUser($username, $password)) {
+            $_SESSION['username'] = $username; // Store username in session to indicate successful login
             $event = new UserLoggedInEvent($username);
             $this->redis->publish('user.loggedin', serialize($event));
-            header("Location: /public/chat.php");
+            header("Location: /chat"); // Adjusted to match the routing setup
             exit;
         } else {
-            echo "Login failed. Please check your credentials.";
+            $_SESSION['login_error'] = "Login failed. Please check your credentials.";
+            header("Location: /login"); // Redirect back to the login page to display the error
             exit;
         }
     }
