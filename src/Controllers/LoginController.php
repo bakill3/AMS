@@ -16,15 +16,22 @@ class LoginController {
     }
 
     public function login(string $username, string $password): void {
+        // Log the attempt to login with the provided username
+        error_log("Attempting login for user: $username");
+
         if ($this->userModel->validateUser($username, $password)) {
             $_SESSION['username'] = $username; // Store username in session to indicate successful login
             $event = new UserLoggedInEvent($username);
             $this->redis->publish('user.loggedin', serialize($event));
+            // Log successful login
+            error_log("Login successful for user: $username");
             header("Location: /chat"); // Adjusted to match the routing setup
             exit;
         } else {
             $_SESSION['login_error'] = "Login failed. Please check your credentials.";
-            header("Location: /login"); // Redirect back to the login page to display the error
+            // Log failed login attempt
+            error_log("Login failed for user: $username. Credentials check failed.");
+            header("Location: /login?error=loginFailed"); // Redirect back to the login page to display the error
             exit;
         }
     }

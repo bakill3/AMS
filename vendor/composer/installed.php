@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'deost/ams',
-        'pretty_version' => 'dev-main',
-        'version' => 'dev-main',
-        'reference' => '8af113a69104df923d9dcdaa84d1a6a861839f60',
+        'pretty_version' => 'dev-develop',
+        'version' => 'dev-develop',
+        'reference' => '089c90f7dd74f9ea5932c4241ca69bab1e796900',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         'deost/ams' => array(
-            'pretty_version' => 'dev-main',
-            'version' => 'dev-main',
-            'reference' => '8af113a69104df923d9dcdaa84d1a6a861839f60',
+            'pretty_version' => 'dev-develop',
+            'version' => 'dev-develop',
+            'reference' => '089c90f7dd74f9ea5932c4241ca69bab1e796900',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

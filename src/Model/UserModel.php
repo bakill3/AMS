@@ -28,8 +28,13 @@ class UserModel
             $stmt->execute();
             
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
+            error_log("Database query result: " . print_r($row, true)); // Add this line
+
             if ($row && password_verify($password, $row['password'])) {
+                error_log("Password verification successful for user: $username"); // Add this line
                 return true;
+            } else {
+                error_log("Password verification failed for user: $username"); // Add this line
             }
         } catch (PDOException $e) {
             error_log("Database error during user validation: " . $e->getMessage());
