@@ -53,8 +53,9 @@ switch ($requestPath) {
         break;
     case '/login':
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $username = $_POST['username'] ?? '';
-            $password = $_POST['password'] ?? '';
+            $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
++           $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
++           $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
             $loginController->login($username, $password);
         } else {
             require __DIR__ . '/login.php';
