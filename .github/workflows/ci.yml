@@ -1,0 +1,82 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - main
+      - develop
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    services:
+      mariadb:
+        image: mariadb
+        env:
+          MYSQL_ROOT_PASSWORD: ${{ secrets.DB_PASSWORD }}  # Ensure this secret is set in your GitHub repository
+          MYSQL_DATABASE: ${{ secrets.DB_NAME }}
+          MYSQL_USER: ${{ secrets.DB_USERNAME }}
+          MYSQL_PASSWORD: ${{ secrets.DB_PASSWORD }}
+        ports:
+          - 3306:3306
+      redis:
+        image: redis
+        options: --entrypoint redis-server
+        ports:
+          - 0:6379  # Dynamic port mapping to prevent conflicts
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+          extensions: mbstring, pdo_mysql
+          tools: composer, phpunit
+
+      - name: Prepare .env file
+        run: |
+          echo "DB_HOST=127.0.0.1" > .env
+          echo "DB_NAME=${{ secrets.DB_NAME }}" >> .env
+          echo "DB_USERNAME=${{ secrets.DB_USERNAME }}" >> .env
+          echo "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" >> .env
+          echo "RANDOMORG_API=${{ secrets.RANDOMORG_API }}" >> .env
+
+      - name: Install PHP dependencies
+        run: composer install --prefer-dist --no-progress --no-suggest
+
+      - name: Start Docker containers
+        run: |
+          docker-compose up -d
+          docker-compose ps  # Outputs the status of the containers for debugging
+
+      - name: Run tests
+        run: |
+          CONTAINER_WEB_ID=$(docker-compose ps -q web)
+          docker exec $CONTAINER_WEB_ID php ./vendor/bin/phpunit
+
+      - name: Build and push Docker images
+        if: github.ref == 'refs/heads/main'  # Only push images for the main branch
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: ${{ secrets.DOCKER_USERNAME }}/projectname:latest
+          build-args: |
+            DB_HOST=${{ secrets.DB_HOST }}
+            DB_NAME=${{ secrets.DB_NAME }}
+            DB_PASSWORD=${{ secrets.DB_PASSWORD }}
+            DB_USERNAME=${{ secrets.DB_USERNAME }}
+            RANDOMORG_API=${{ secrets.RANDOMORG_API }}
+
+      - name: Deploy to Server
+        if: github.ref == 'refs/heads/main'
+        run: |
+          ssh -i ${{ secrets.SSH_PRIVATE_KEY }} your-server-user@your-server-ip "docker pull ${{ secrets.DOCKER_USERNAME }}/projectname:latest && docker-compose up -d"
