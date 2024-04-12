@@ -11,8 +11,8 @@ class LoginController {
     private Redis $redis;
 
     public function __construct(UserModel $userModel, Redis $redis) {
-        ob_start(); // Start output buffering
-        if (session_status() === PHP_SESSION_NONE) {
+        ob_start(); // Start output buffering at the very beginning
+        if (session_status() !== PHP_SESSION_ACTIVE) {
             session_start(); // Start session only if not already started
         }
         $this->userModel = $userModel;
@@ -28,12 +28,12 @@ class LoginController {
             $this->redis->publish('user.loggedin', serialize($event));
 
             error_log("Login successful for user: $username");
-            header("Location: /chat"); // Adjusted to match the routing setup
+            header("Location: /chat");
             exit;
         } else {
             $_SESSION['login_error'] = "Login failed. Please check your credentials.";
             error_log("Login failed for user: $username. Credentials check failed.");
-            header("Location: /login?error=loginFailed"); // Redirect back to the login page to display the error
+            header("Location: /login?error=loginFailed");
             exit;
         }
     }
