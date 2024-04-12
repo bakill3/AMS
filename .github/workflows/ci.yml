@@ -36,44 +36,22 @@ jobs:
           extensions: mbstring, pdo_mysql
           tools: composer, phpunit
 
-      - name: Set up environment variables
-        run: |
-          echo "DB_HOST=${{ secrets.DB_HOST }}" >> $GITHUB_ENV
-          echo "DB_NAME=${{ secrets.DB_NAME }}" >> $GITHUB_ENV
-          echo "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" >> $GITHUB_ENV
-          echo "DB_USERNAME=${{ secrets.DB_USERNAME }}" >> $GITHUB_ENV
-          echo "DOCKER_USERNAME=${{ secrets.DOCKER_USERNAME }}" >> $GITHUB_ENV
-          echo "DOCKER_PASSWORD=${{ secrets.DOCKER_PASSWORD }}" >> $GITHUB_ENV
-          echo "RANDOMORG_API=${{ secrets.RANDOMORG_API }}" >> $GITHUB_ENV
-
       - name: Prepare .env file
         run: |
-          if [ ! -f ".env" ]; then
-            echo "Creating .env from GitHub secrets"
-            echo "DB_HOST=${{ secrets.DB_HOST }}" > .env
-            echo "DB_NAME=${{ secrets.DB_NAME }}" >> .env
-            echo "DB_USERNAME=${{ secrets.DB_USERNAME }}" >> .env
-            echo "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" >> .env
-            echo "RANDOMORG_API=${{ secrets.RANDOMORG_API }}" >> .env
-          else
-            echo ".env file already exists, updating with latest secrets"
-            sed -i "s/^DB_HOST=.*/DB_HOST=${{ secrets.DB_HOST }}/" .env
-            sed -i "s/^DB_NAME=.*/DB_NAME=${{ secrets.DB_NAME }}/" .env
-            sed -i "s/^DB_USERNAME=.*/DB_USERNAME=${{ secrets.DB_USERNAME }}/" .env
-            sed -i "s/^DB_PASSWORD=.*/DB_PASSWORD=${{ secrets.DB_PASSWORD }}/" .env
-            sed -i "s/^RANDOMORG_API=.*/RANDOMORG_API=${{ secrets.RANDOMORG_API }}/" .env
-          fi
+          echo "DB_HOST=${{ secrets.DB_HOST }}" > .env
+          echo "DB_NAME=${{ secrets.DB_NAME }}" >> .env
+          echo "DB_USERNAME=${{ secrets.DB_USERNAME }}" >> .env
+          echo "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" >> .env
+          echo "RANDOMORG_API=${{ secrets.RANDOMORG_API }}" >> .env
 
       - name: Install PHP dependencies
         run: composer install --prefer-dist --no-progress --no-suggest
 
       - name: Start Docker containers
-        run: |
-          docker-compose up -d
+        run: docker-compose up -d
 
       - name: Run tests
-        run: |
-          docker exec ams-web-1 php ./vendor/bin/phpunit
+        run: docker exec ams-web-1 php ./vendor/bin/phpunit
 
       - name: Build and push Docker images
         if: github.ref == 'refs/heads/main' # Only push images for the main branch
@@ -82,7 +60,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: yourdockerhubusername/projectname:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/projectname:latest
           build-args: |
             DB_HOST=${{ secrets.DB_HOST }}
             DB_NAME=${{ secrets.DB_NAME }}
@@ -93,4 +71,4 @@ jobs:
       - name: Deploy to Server
         if: github.ref == 'refs/heads/main'
         run: |
-          ssh -i ${{ secrets.SSH_PRIVATE_KEY }} your-server-user@your-server-ip "docker pull yourdockerhubusername/projectname:latest && docker-compose up -d"
+          ssh -i ${{ secrets.SSH_PRIVATE_KEY }} your-server-user@your-server-ip "docker pull ${{ secrets.DOCKER_USERNAME }}/projectname:latest && docker-compose up -d"
