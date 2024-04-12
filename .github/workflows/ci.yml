@@ -17,15 +17,17 @@ jobs:
       mariadb:
         image: mariadb
         env:
-          MYSQL_DATABASE: advanced_messaging_system
-          MYSQL_USER: bakill3
+          MYSQL_ROOT_PASSWORD: ${{ secrets.DB_PASSWORD }}  # Ensure this secret is set in your GitHub repository
+          MYSQL_DATABASE: ${{ secrets.DB_NAME }}
+          MYSQL_USER: ${{ secrets.DB_USERNAME }}
           MYSQL_PASSWORD: ${{ secrets.DB_PASSWORD }}
         ports:
           - 3306:3306
       redis:
         image: redis
+        options: --entrypoint redis-server
         ports:
-          - 6379:6379
+          - 0:6379  # Dynamic port mapping to prevent conflicts
 
     steps:
       - name: Check out repository
@@ -40,9 +42,9 @@ jobs:
 
       - name: Prepare .env file
         run: |
-          echo "DB_HOST=db" > .env
-          echo "DB_NAME=advanced_messaging_system" >> .env
-          echo "DB_USERNAME=bakill3" >> .env
+          echo "DB_HOST=127.0.0.1" > .env
+          echo "DB_NAME=${{ secrets.DB_NAME }}" >> .env
+          echo "DB_USERNAME=${{ secrets.DB_USERNAME }}" >> .env
           echo "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" >> .env
           echo "RANDOMORG_API=${{ secrets.RANDOMORG_API }}" >> .env
 
@@ -50,13 +52,17 @@ jobs:
         run: composer install --prefer-dist --no-progress --no-suggest
 
       - name: Start Docker containers
-        run: docker-compose up -d
+        run: |
+          docker-compose up -d
+          docker-compose ps  # Outputs the status of the containers for debugging
 
       - name: Run tests
-        run: docker exec ams-web-1 php ./vendor/bin/phpunit
+        run: |
+          CONTAINER_WEB_ID=$(docker-compose ps -q web)
+          docker exec $CONTAINER_WEB_ID php ./vendor/bin/phpunit
 
       - name: Build and push Docker images
-        if: github.ref == 'refs/heads/main' # Only push images for the main branch
+        if: github.ref == 'refs/heads/main'  # Only push images for the main branch
         uses: docker/build-push-action@v2
         with:
           context: .
@@ -64,10 +70,10 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/projectname:latest
           build-args: |
-            DB_HOST=db
-            DB_NAME=advanced_messaging_system
-            DB_USERNAME=bakill3
+            DB_HOST=${{ secrets.DB_HOST }}
+            DB_NAME=${{ secrets.DB_NAME }}
             DB_PASSWORD=${{ secrets.DB_PASSWORD }}
+            DB_USERNAME=${{ secrets.DB_USERNAME }}
             RANDOMORG_API=${{ secrets.RANDOMORG_API }}
 
       - name: Deploy to Server
