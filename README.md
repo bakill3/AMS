@@ -62,7 +62,7 @@ To get your own instance of AMS running:
    DB_USER=ams_user
    DB_PASS=ams_password
    RANDOMORG_API_KEY=your_random_org_api_key_here```
-   
+
 ## Roadmap 🛣️
 
 Future enhancements planned for AMS include:
@@ -82,17 +82,15 @@ We welcome contributions from the community! Here's how you can contribute:
 
 ## License 📜
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [https://github.com/bakill3/AMS/blob/develop/LICENSE.md](LICENSE) file for details.
 
 ## Contact 📧
 
-- **Gabriel Brandão** - [@bakill717](https://twitter.com/bakill717) - email: deostulti2@gmail.com
+- **Gabriel Brandão** - : [https://www.linkedin.com/in/gabriel-brandao-2000-pt/](LinkedIn)
 - **Project Link**: [https://github.com/bakill3/AMS](https://github.com/bakill3/AMS)
 
 ## Acknowledgements 🎉
 
 - [Random.org](https://www.random.org/) for true randomness.
 - [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet) for emojis used in this document.
-- [Choose an Open Source License](https://choosealicense.com)
-- [Markdown Guide](https://guides.github.com/features/mastering-markdown/)
 - [README Template](https://github.com/othneildrew/Best-README-Template)
