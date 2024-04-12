@@ -11,9 +11,9 @@ class LoginController {
     private Redis $redis;
 
     public function __construct(UserModel $userModel, Redis $redis) {
-        ob_start(); // Start output buffering at the very beginning
+        ob_start();
         if (session_status() !== PHP_SESSION_ACTIVE) {
-            session_start(); // Start session only if not already started
+            session_start();
         }
         $this->userModel = $userModel;
         $this->redis = $redis;
@@ -23,7 +23,7 @@ class LoginController {
         error_log("Attempting login for user: $username");
 
         if ($this->userModel->validateUser($username, $password)) {
-            $_SESSION['username'] = $username; // Store username in session to indicate successful login
+            $_SESSION['username'] = $username;
             $event = new UserLoggedInEvent($username);
             $this->redis->publish('user.loggedin', serialize($event));
 

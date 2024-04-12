@@ -44,7 +44,7 @@ function encryptMessage($message, $randomIntegers) {
         $shift = $randomIntegers[$index % count($randomIntegers)];
         $encrypted .= chr(ord($char) + $shift);
     }
-    return base64_encode($encrypted); // Base64 encode to ensure safe storage/display
+    return base64_encode($encrypted); // Base64 encoding
 }
 
 function decryptMessage($encryptedMessage, $randomIntegers) {

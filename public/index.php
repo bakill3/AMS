@@ -33,18 +33,15 @@ try {
     die("Database connection failed: " . $e->getMessage());
 }
 
-// Redis client for event publishing
+// Redis
 $redis = new Redis(['scheme' => 'tcp', 'host' => $redisHost, 'port' => 6379]);
 
-// Initialize UserModel with PDO
 $userModel = new UserModel($pdo);
 
-// Instantiate controllers with corrected order
 $loginController = new LoginController($userModel, $redis);
 $logoutController = new LogoutController($redis);
 $registerController = new RegisterController($userModel, $redis);
 
-// Routing (basic example)
 $requestPath = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 switch ($requestPath) {
@@ -74,13 +71,10 @@ switch ($requestPath) {
         }
         break;
     case '/chat':
-        // Ensure the user is authenticated before accessing the chat
         if (!isset($_SESSION['user_id'])) {
-            // Redirect to login if not authenticated
             header("Location: /login");
             exit;
         }
-        // Render the chat page
         require __DIR__ . '/public/chat.php';
         break;
         
