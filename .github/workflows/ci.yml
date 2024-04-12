@@ -48,12 +48,21 @@ jobs:
 
       - name: Prepare .env file
         run: |
-          cp .env.example .env
-          sed -i "s/DB_HOST=/DB_HOST=${{ secrets.DB_HOST }}/" .env
-          sed -i "s/DB_DATABASE=/DB_DATABASE=${{ secrets.DB_NAME }}/" .env
-          sed -i "s/DB_USERNAME=/DB_USERNAME=${{ secrets.DB_USERNAME }}/" .env
-          sed -i "s/DB_PASSWORD=/DB_PASSWORD=${{ secrets.DB_PASSWORD }}/" .env
-          sed -i "s/RANDOMORG_API=/RANDOMORG_API=${{ secrets.RANDOMORG_API }}/" .env
+          if [ ! -f ".env" ]; then
+            echo "Creating .env from GitHub secrets"
+            echo "DB_HOST=${{ secrets.DB_HOST }}" > .env
+            echo "DB_NAME=${{ secrets.DB_NAME }}" >> .env
+            echo "DB_USERNAME=${{ secrets.DB_USERNAME }}" >> .env
+            echo "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" >> .env
+            echo "RANDOMORG_API=${{ secrets.RANDOMORG_API }}" >> .env
+          else
+            echo ".env file already exists, updating with latest secrets"
+            sed -i "s/^DB_HOST=.*/DB_HOST=${{ secrets.DB_HOST }}/" .env
+            sed -i "s/^DB_NAME=.*/DB_NAME=${{ secrets.DB_NAME }}/" .env
+            sed -i "s/^DB_USERNAME=.*/DB_USERNAME=${{ secrets.DB_USERNAME }}/" .env
+            sed -i "s/^DB_PASSWORD=.*/DB_PASSWORD=${{ secrets.DB_PASSWORD }}/" .env
+            sed -i "s/^RANDOMORG_API=.*/RANDOMORG_API=${{ secrets.RANDOMORG_API }}/" .env
+          fi
 
       - name: Install PHP dependencies
         run: composer install --prefer-dist --no-progress --no-suggest
