@@ -17,7 +17,9 @@ jobs:
       mariadb:
         image: mariadb
         env:
-          MYSQL_ROOT_PASSWORD: ${{ secrets.DB_PASSWORD }}
+          MYSQL_DATABASE: advanced_messaging_system
+          MYSQL_USER: bakill3
+          MYSQL_PASSWORD: ${{ secrets.DB_PASSWORD }}
         ports:
           - 3306:3306
       redis:
@@ -38,9 +40,9 @@ jobs:
 
       - name: Prepare .env file
         run: |
-          echo "DB_HOST=${{ secrets.DB_HOST }}" > .env
-          echo "DB_NAME=${{ secrets.DB_NAME }}" >> .env
-          echo "DB_USERNAME=${{ secrets.DB_USERNAME }}" >> .env
+          echo "DB_HOST=db" > .env
+          echo "DB_NAME=advanced_messaging_system" >> .env
+          echo "DB_USERNAME=bakill3" >> .env
           echo "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" >> .env
           echo "RANDOMORG_API=${{ secrets.RANDOMORG_API }}" >> .env
 
@@ -62,10 +64,10 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/projectname:latest
           build-args: |
-            DB_HOST=${{ secrets.DB_HOST }}
-            DB_NAME=${{ secrets.DB_NAME }}
+            DB_HOST=db
+            DB_NAME=advanced_messaging_system
+            DB_USERNAME=bakill3
             DB_PASSWORD=${{ secrets.DB_PASSWORD }}
-            DB_USERNAME=${{ secrets.DB_USERNAME }}
             RANDOMORG_API=${{ secrets.RANDOMORG_API }}
 
       - name: Deploy to Server
