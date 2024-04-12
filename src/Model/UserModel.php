@@ -12,7 +12,7 @@ class UserModel
     public function __construct(PDO $pdo)
     {
         $this->pdo = $pdo;
-        $this->pdo->exec("SET NAMES utf8"); // Ensure UTF-8 encoding for all transactions
+        $this->pdo->exec("SET NAMES utf8");
     }
 
     public function validateUser(string $username, string $password): bool {

@@ -1,5 +1,4 @@
 <?php
-// Require necessary files
 require_once __DIR__ . '/../vendor/autoload.php';
 require_once '../src/Services/RandomOrgClient.php'; // Adjust path as necessary
 
@@ -9,11 +8,6 @@ $dotenv->load();
 
 $randomOrgClient = new RandomOrgClient($_ENV['RANDOMORG_API']);
 
-// Assuming you have session start and user authentication already
-// $currentUser = ...; // Current logged-in user
-
-// For demonstration, getting a fixed set of "random" integers for encryption/decryption
-// In practice, you'd fetch a unique set per message and store alongside the message
 $randomIntegers = $randomOrgClient->getRandomIntegers(10, 1, 10);
 
 function encryptMessage($message, $randomIntegers) {
@@ -26,7 +20,6 @@ function encryptMessage($message, $randomIntegers) {
 }
 
 function decryptMessage($encryptedMessage, $randomIntegers) {
-    // Simple decryption by shifting characters back
     $message = '';
     foreach (str_split($encryptedMessage) as $i => $char) {
         $message .= chr(ord($char) - $randomIntegers[$i % count($randomIntegers)]);
@@ -39,13 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['message'])) {
     $message = $_POST['message'];
 
     $encryptedMessage = encryptMessage($message, $randomIntegers);
-
-    // Now, save $encryptedMessage to the database along with sender_id, receiver_id
-    // This part depends on your MessageModel implementation
 }
-
-// Displaying messages would involve decrypting messages fetched from the database
-// using the decryptMessage function, looping through each message and displaying it
 
 ?>
 <!DOCTYPE html>
