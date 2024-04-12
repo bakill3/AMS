@@ -1,4 +1,3 @@
-
 <?php
 // tests/UserAuthenticationTest.php
 use PHPUnit\Framework\TestCase;
@@ -10,9 +9,11 @@ class UserAuthenticationTest extends TestCase
     public function setUp(): void {
         $this->pdo = new PDO('mysql:host=localhost;dbname=testdb', 'user', 'password');
         $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $this->pdo->beginTransaction(); // Start a transaction
     }
 
     public function tearDown(): void {
+        $this->pdo->rollBack(); // Rollback any changes after the test
         $this->pdo = null;
     }
 
