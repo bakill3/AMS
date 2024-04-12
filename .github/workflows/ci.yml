@@ -1,0 +1,87 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - main
+      - develop
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    services:
+      mariadb:
+        image: mariadb
+        env:
+          MYSQL_ROOT_PASSWORD: ${{ secrets.DB_PASSWORD }}
+        ports:
+          - 3306:3306
+      redis:
+        image: redis
+        ports:
+          - 6379:6379
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+          extensions: mbstring, pdo_mysql
+          tools: composer, phpunit
+
+      - name: Set up environment variables
+        run: |
+          echo "DB_HOST=${{ secrets.DB_HOST }}" >> $GITHUB_ENV
+          echo "DB_NAME=${{ secrets.DB_NAME }}" >> $GITHUB_ENV
+          echo "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" >> $GITHUB_ENV
+          echo "DB_USERNAME=${{ secrets.DB_USERNAME }}" >> $GITHUB_ENV
+          echo "DOCKER_USERNAME=${{ secrets.DOCKER_USERNAME }}" >> $GITHUB_ENV
+          echo "DOCKER_PASSWORD=${{ secrets.DOCKER_PASSWORD }}" >> $GITHUB_ENV
+          echo "RANDOMORG_API=${{ secrets.RANDOMORG_API }}" >> $GITHUB_ENV
+
+      - name: Prepare .env file
+        run: |
+          cp .env.example .env
+          sed -i "s/DB_HOST=/DB_HOST=${{ secrets.DB_HOST }}/" .env
+          sed -i "s/DB_DATABASE=/DB_DATABASE=${{ secrets.DB_NAME }}/" .env
+          sed -i "s/DB_USERNAME=/DB_USERNAME=${{ secrets.DB_USERNAME }}/" .env
+          sed -i "s/DB_PASSWORD=/DB_PASSWORD=${{ secrets.DB_PASSWORD }}/" .env
+          sed -i "s/RANDOMORG_API=/RANDOMORG_API=${{ secrets.RANDOMORG_API }}/" .env
+
+      - name: Install PHP dependencies
+        run: composer install --prefer-dist --no-progress --no-suggest
+
+      - name: Start Docker containers
+        run: |
+          docker-compose up -d
+
+      - name: Run tests
+        run: |
+          docker exec ams-web-1 php ./vendor/bin/phpunit
+
+      - name: Build and push Docker images
+        if: github.ref == 'refs/heads/main' # Only push images for the main branch
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: yourdockerhubusername/projectname:latest
+          build-args: |
+            DB_HOST=${{ secrets.DB_HOST }}
+            DB_NAME=${{ secrets.DB_NAME }}
+            DB_PASSWORD=${{ secrets.DB_PASSWORD }}
+            DB_USERNAME=${{ secrets.DB_USERNAME }}
+            RANDOMORG_API=${{ secrets.RANDOMORG_API }}
+
+      - name: Deploy to Server
+        if: github.ref == 'refs/heads/main'
+        run: |
+          ssh -i ${{ secrets.SSH_PRIVATE_KEY }} your-server-user@your-server-ip "docker pull yourdockerhubusername/projectname:latest && docker-compose up -d"
