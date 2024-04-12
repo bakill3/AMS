@@ -10,6 +10,8 @@ Welcome to AMS - a cutting-edge messaging system that combines the thrill of rea
 
 Atmospheric noise, derived from natural and chaotic processes, is unpredictable and perfect for secure data encryption. Unlike deterministic pseudo-random generators, AMS's use of true randomness ensures that each message is shielded by the laws of nature, providing a level of security that is virtually unbreakable.
 
+Read more about this on [https://github.com/bakill3/AMS/blob/develop/LICENSE.md](Notion) or on this [https://drive.google.com/file/d/1DLVSVBIeuG7bleG1NpNQTyPwsFRmyrUx/view?usp=sharing](Google Drive File).
+
 ### A New Frontier in Digital Security 🔐
 
 AMS leverages this true randomness to offer a messaging system where each communication is a fortress. It is a pioneering application that not only secures information but does so with the elegance of simplicity and the power of nature.
