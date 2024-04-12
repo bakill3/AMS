@@ -10,7 +10,7 @@ Welcome to AMS - a cutting-edge messaging system that combines the thrill of rea
 
 Atmospheric noise, derived from natural and chaotic processes, is unpredictable and perfect for secure data encryption. Unlike deterministic pseudo-random generators, AMS's use of true randomness ensures that each message is shielded by the laws of nature, providing a level of security that is virtually unbreakable.
 
-Read more about this on [https://github.com/bakill3/AMS/blob/develop/LICENSE.md](Notion) or on this [https://drive.google.com/file/d/1DLVSVBIeuG7bleG1NpNQTyPwsFRmyrUx/view?usp=sharing](Google Drive File).
+Read more about this on [Notion](https://github.com/bakill3/AMS/blob/develop/LICENSE.md) or on this [Google Drive File](https://drive.google.com/file/d/1DLVSVBIeuG7bleG1NpNQTyPwsFRmyrUx/view?usp=sharing).
 
 ### A New Frontier in Digital Security 🔐
 
@@ -84,12 +84,12 @@ We welcome contributions from the community! Here's how you can contribute:
 
 ## License 📜
 
-This project is licensed under the MIT License - see the [https://github.com/bakill3/AMS/blob/develop/LICENSE.md](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/bakill3/AMS/blob/develop/LICENSE.md) file for details.
 
 ## Contact 📧
 
-- **Gabriel Brandão** - : [https://www.linkedin.com/in/gabriel-brandao-2000-pt/](LinkedIn)
-- **Project Link**: [https://github.com/bakill3/AMS](https://github.com/bakill3/AMS)
+- **Gabriel Brandão** - [LinkedIn](https://www.linkedin.com/in/gabriel-brandao-2000-pt/)
+- **Project Link**: [AMS on GitHub](https://github.com/bakill3/AMS)
 
 ## Acknowledgements 🎉
 
